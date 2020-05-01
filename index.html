@@ -13,5 +13,152 @@
 in the <a href="https://www.cmu.edu">Carnegie Mellon University</a>
 <a href="https://csd.cs.cmu.edu">Computer Science Department</a>.</a>
 
+
+<h2>Data structures</h2>
+
+<h3><a name="feedforward">Feed-Forward Bloom Filter</a></h3>
+<p>Memory efficient and cache-optimized algorithm for simultaneously searching for a large number of
+patterns in a very large corpus
+[<a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611972917.1">SIAM ALENEX 2011</a>]</p>
+<p><a href="https://github.com/efficient/ffbf">Reference implementation</a></p>
+
+<h3><a name="rankselect">Rank &amp; Select Structures on Uncompressed Bit Sequences</a></h3>
+<p>Rank &amp; select structures that use a cache-centric design approach to achieve performance
+competitive with the highest-performance prior designs while imposing space overhead as low as the
+most space-efficient, but slower, prior designs
+[<a href="http://www.cs.cmu.edu/~dongz/papers/poppy.pdf">SEA 2013</a>]</p>
+<p><a href="https://github.com/efficient/rankselect">Reference implementation</a></p>
+
+<h3><a name="cuckoofilter">Cuckoo Filter</a></h3>
+<p>Data structure that can replace Bloom filters for approximate set membership tests, supporting
+dynamic item addition and removal items while achieving even higher performance than Bloom filters
+[<a href="https://dl.acm.org/doi/10.1145/2674005.2674994">CoNEXT 2014</a>]</p>
+<p><a href="https://github.com/efficient/cuckoofilter">Reference implementation</a></p>
+
+<h3><a name="libcuckoo">libcuckoo</a></h3>
+<p>High-throughput and memory-efficient concurrent hash table that supports multiple readers and
+writers [<a href="https://dl.acm.org/doi/10.1145/2592798.2592820">EuroSys 2014</a>]</p>
+<p><a href="https://github.com/efficient/libcuckoo-sourcery">Version presented in paper</a></p>
+<p><a href="https://github.com/efficient/libcuckoo">Updated implementation</a></p>
+
+<h3><a name="surf">SuRF (Succinct Range Filter)</a></h3>
+<p>Fast and compact data structure for approximate membership tests that supports both single-key
+lookups and common range queries
+[<a href="https://dl.acm.org/doi/abs/10.1145/3183713.3196931">SIGMOD 2018</a>]</p>
+<p><a href="https://github.com/efficient/SuRF">SuRF data structure</a></p>
+<p><a href="https://www.rangefilter.io">Live interactive demo</a>
+(<a href="https://github.com/efficient/SuRF-demo">source code</a>)</p>
+<p><a href="https://github.com/efficient/fast-succinct-trie">Underlying FST data structure</a></p>
+<p><a href="https://github.com/efficient/rocksdb">RocksDB equipped with SuRF</a></p>
+
+<h2>Distributed consensus</h2>
+
+<h3><a name="epaxos">EPaxos (Egalitarian Paxos)</a></h3>
+<p>Distributed consensus algorithm based on Paxos that efficiently achieves optimal commit
+latency in the wide-area when tolerating one and two failures, uniform load balancing across all
+replicas, and graceful performance degradation when replicas are slow or crash
+[<a href="https://dl.acm.org/doi/10.1145/2517349.2517350">SOSP 2013</a>]</p>
+<p><a href="https://github.com/efficient/epaxos">Reference implementation</a></p>
+
+<h3><a name="quorumlease">Paxos Quorum Leases</a></h3>
+<p>Technique that allows Paxos-based systems to perform reads with high throughput and low latency
+without sacrificing consistency or write latency or accepting more than minimal impact on system
+availability
+[<a href="https://www.pdl.cmu.edu/PDL-FTP/associated/CMU-PDL-14-105_abs.shtml">CMU PDL 2014</a>]</p>
+<p><a href="https://github.com/efficient/qlease">Reference implementation</a></p>
+
+
+<h2>Isolation</h2>
+
+<h3><a name="catbench">CATBench</a></h3>
+<p>Benchmark demonstrating that cache partitioning can protect the performance of latency-sensitive
+networked applications from local resource contention
+[<a href="http://reports-archive.adm.cs.cmu.edu/anon/2017/abstracts/17-125.html">CMU CSD 2017</a>]</p>
+<p><a href="https://github.com/efficient/catbench">Benchmarks in paper</a></p>
+
+<h3><a name="microservices">Microservice Microbenchmarks</a></h3>
+<p>Benchmark demonstrating a likely explanation for contemporary serverless platforms' high
+microservice invocation latencies in the hundreds of milliseconds for cold starts and tens of
+milliseconds for warm starts
+[<a href="https://www.usenix.org/conference/atc18/presentation/boucher">ATC 2018</a>]</p>
+<p><a href="https://github.com/efficient/microservices_microbenchmarks">Benchmarks in paper</a></p>
+
+
+<h2>Key-value stores</h2>
+
+<h3><a name="memc3">MemC3</a></h3>
+<p>Set of architecturally and workload inspired algorithmic and engineering improvements to the
+popular Memcached system that substantially improve both its memory efficiency and throughput
+[<a href="https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/fan">NSDI 2013</a>]</p>
+<p><a href="https://github.com/efficient/memc3">MemC3 implementation</a></p>
+
+<h3><a name="herd">HERD</a></h3>
+<p>Key-value system designed to make the best use of an RDMA network by reducing network round trips
+while using efficient RDMA primitives
+[<a href="https://dl.acm.org/doi/10.1145/2619239.2626299">SIGCOMM 14</a>]</p>
+<p><a href="https://github.com/efficient/HERD">HERD implementation</a></p>
+
+<h3><a name="mica">MICA</a></h3>
+<p>Scalable in-memory key-value store that achieves a record-setting throughput of 120 million
+requests per second (MRPS) on a single commodity server, 9.2X the performance (RPS) and 2.8X the
+system energy efficiency (RPS/watt) of the best-published FPGA-based claims
+[<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/lim">NSDI 2014</a>,
+<a href="https://ieeexplore.ieee.org/document/7284088">ISCA 2015</a>]</p>
+<p><a href="https://github.com/efficient/mica">Version presented in NSDI paper</a></p>
+<p><a href="https://github.com/efficient/mica/tree/isca2015">Version presented in ISCA paper</a></p>
+<p><a href="https://github.com/efficient/mica2">Updated implementation (MICA 2)</a></p>
+
+<h3><a name="cicada">Cicada</a></h3>
+<p>Single-node multi-core in-memory transactional database with serializability that provides
+high performance under diverse workloads by leveraging optimistic and multi-version concurrency
+control schemes and multiple loosely synchronized clocks
+[<a href="https://dl.acm.org/doi/10.1145/3035918.3064015">SIGMOD 2017</a>]</p>
+<p><a href="https://github.com/efficient/cicada-engine">Cicada implementation</a></p>
+<p><a href="https://github.com/efficient/cicada-exp-sigmod2017">Benchmarks in paper</a></p>
+
+
+<h2>Memory and storage</h2>
+
+<h3><a name="memstores">Building Blocks for Main Memory Data Stores</a></h3>
+<p>Systems design proposals for consistent, durable, and safe memory management for future
+byte-addressable non-volatile (NV) memory
+[<a href="https://www.pdl.cmu.edu/PDL-FTP/NVM/CMU-PDL-11-114_abs.shtml">CMU PDL 2011</a>]</p>
+<p><a href="https://github.com/efficient/nvram">Reference implementations</a></p>
+
+<h3><a name="logstructured">Evaluation of Multi-Stage Log-Structured Designs</a></h3>
+<p>New analytic primitives and MSLS design models that quickly give accurate performance estimates
+for evaluation of systems such as LevelDB, RocksDB, HBase, and Cassandra
+[<a href="https://www.usenix.org/conference/fast16/technical-sessions/presentation/lim">FAST 2016</a>]</p>
+<p><a href="https://github.com/efficient/msls-eval">Benchmarks in paper</a></p>
+
+
+<h2>Networking</h2>
+
+<h3><a name="cuckooswitch">CuckooSwitch</a></h3>
+<p>Software-based Ethernet switch design built around a memory-efficient, high-performance, and
+highly-concurrent hash table for compact and fast FIB lookup
+[<a href="https://dl.acm.org/doi/10.1145/2535372.2535379">CoNEXT 2013</a>]</p>
+<p><a href="https://github.com/efficient/cuckooswitch">CuckooSwitch implementation</a></p>
+
+<h3><a name="gopt">G-Opt</a></h3>
+<p>Exploration of a hypothesis that many of the benefits of using Graphics Processing Units (GPUs)
+as accelerators for software-based routing and packet handling applications arise less from the GPU
+hardware itself as from the expression of the problem in a language such as CUDA or OpenCL that
+facilitates memory latency hiding and vectorization through massive concurrency
+[<a href="https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/kalia">NSDI 2015</a>]</p>
+<p><a href="https://github.com/efficient/gopt">Benchmarks in paper</a></p>
+
+<h3><a name="rdmabench">Design Guidelines for High Performance RDMA Systems</a></h3>
+<p>Framework for understanding RDMA performance and helping system designers to navigate the RDMA
+design space
+[<a href="https://www.usenix.org/conference/atc16/technical-sessions/presentation/kalia">ATC 2016</a>]</p>
+<p><a href="https://github.com/efficient/rdma_bench">Benchmarks in paper</a></p>
+
+<h3><a name="fasst">FaSST (Fast, Scalable and Simple distributed Transactions)</a></h3>
+<p>RDMA-based system that provides distributed in-memory transactions with serializability and
+durability, yet eschews one-sided RDMA for fast RPCs using two-sided unreliable datagrams
+[<a href="https://www.usenix.org/conference/osdi16/technical-sessions/presentation/kalia">OSDI 2016</a>]</p>
+<p><a href="https://github.com/efficient/fasst">Benchmarks in paper</a></p>
+
 </body>
 </html>
