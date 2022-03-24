@@ -90,6 +90,29 @@ milliseconds for warm starts
 <p><a href="https://github.com/efficient/microservices_microbenchmarks">Benchmarks in paper</a></p>
 
 <h3><a name="lpf">Lightweight Preemptible Functions</a></h3>
+<p>Program primitives for limiting function execution time and isolating memory within a process</p>
+<h4>Thesis</h4>
+<a href="http://reports-archive.adm.cs.cmu.edu/anon/2022/abstracts/22-101.html">CMU CSD 2022</a>
+<ul>
+<li>Chapter 3: <a href="https://github.com/efficient/libinger/tree/gotcha">libgotcha</a></li>
+<ul>
+<li>Section 3.9.1: <tt>make bench</tt> (see <tt>bench.rs</tt>)</li>
+<li>Section 3.9.2: <a href="https://github.com/efficient/dyno">dyno</a></li>
+<li>Section 3.9.3: <a href="https://github.com/efficient/libas-safe/tree/gotchyas/tlsblock">libtlsblock</a> and <a href="https://github.com/efficient/libas-safe/tree/gotchyas/tls">benchmark</a></li>
+</ul>
+<li>Chapter 4: <a href="https://github.com/efficient/libas-safe">libas-safe</a> and <a href="https://github.com/efficient/libac-safe">libac-safe</a></li>
+<li>Chapter 5: <a href="https://github.com/efficient/libinger">libinger</a></li>
+<ul>
+<li>Section 5.12: <tt>cargo build --release --bench inger</tt> (see <tt>benches/inger.rs</tt>)</li>
+<li>Section 5.12.1: <a href="https://github.com/efficient/tokio/tree/libpng-bombs">benchmark</a></li>
+<li>Section 5.6.1: <a href="https://github.com/efficient/microservices_microbenchmarks/tree/master/hasher">benchmark</a></li>
+</ul>
+<li>Chapter 6: <a href="https://github.com/efficient/libinger/tree/master/compiler">ingerc</a> and <a href="https://github.com/efficient/libac-safe/tree/rust">minimal</a></li>
+<li>Chapter 7: <a href="https://github.com/efficient/tokio/tree/tokio-threadpool-preemptive">libturquoise</a> and <a href="https://github.com/efficient/tokio/tree/master">benchmark</a></li>
+<li>Chapter 8: <a href="https://github.com/efficient/strobelight-rpc">strobelight</a></li>
+<li>Chapter 9: <a href="https://github.com/efficient/microservices_microbenchmarks">benchmark</a></li>
+</ul>
+<h4>Conference paper</h4>
 <p>Mechanism for synchronously performing a function call with a precise timeout that is
 lightweight, efficient, and composable, all while being portable between programming languages
 [<a href="https://www.usenix.org/conference/atc20/presentation/boucher">ATC 2020</a>]</p>
